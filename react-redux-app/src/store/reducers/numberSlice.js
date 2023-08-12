@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    number:0
+    number:0,
+    laptop:[]
 }
 
 const numberSlice = createSlice({
@@ -9,10 +10,12 @@ const numberSlice = createSlice({
     initialState,
     reducers:{
         increment: (state, action)=>({
-            number: state.number + action.payload
+            ...state, //spred for override to count values below -> this step can skip please learn more
+            number: state.number + action.payload //immer libry can helps you to skip spred operator -> redux-toolkit has that libry
         }),
         decrement: (state, action)=>({
-            number: state.number - action.payload
+            ...state, //spred for override to count values below -> this step can skip please learn more
+            number: state.number - action.payload //immer libry can helps you to skip spred operator -> redux-toolkit has that libry
         })
     }
 })

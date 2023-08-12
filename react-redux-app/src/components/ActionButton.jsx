@@ -5,12 +5,13 @@ import { decrement, increment } from '../store/reducers/numberSlice'
 
 const ActionButton = () => {
 
-  const number = useSelector(store => store.numberSlice.number)
+  const number = useSelector(store => store.numberSlice)
   const dispatch = useDispatch()
+  console.log(number)
 
   return (
     <div>
-      <h2>{number}</h2>
+      <h2>{number.number}</h2>
      <button onClick={()=>dispatch(increment(2))} className='action-button'>Increment</button>
      <button onClick={()=>dispatch(decrement(5))} className='action-button space'>Dicrement</button>
     </div>

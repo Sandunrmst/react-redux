@@ -10,10 +10,12 @@ const laptopSlice = createSlice({
     initialState,
     reducers:{
         addLaptop: (state, action) => ({
-            counnt:state.counnt + action.payload
+            ...state, //spred for override to count values below -> this step can skip please learn more
+            counnt:state.counnt + action.payload //immer libry can helps you to skip spred operator -> redux-toolkit has that libry
         }),
         removeLaptop: (state, action) => ({
-            counnt: state.counnt - action.payload
+            ...state, //spred for override to count values below -> this step can skip please learn more
+            counnt: state.counnt - action.payload //immer libry can helps you to skip spred operator -> redux-toolkit has that libry
         })
     }
 })
