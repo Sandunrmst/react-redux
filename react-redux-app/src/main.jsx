@@ -6,10 +6,12 @@ import { Provider } from 'react-redux'
 import store from './store/Store.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
- <Provider store={store}>
+
    <React.StrictMode>
+    <Provider store={store}>
     <App />
+    </Provider>
   </React.StrictMode>
- </Provider>
+
 
 )

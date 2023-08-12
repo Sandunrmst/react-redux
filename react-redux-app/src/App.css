@@ -16,3 +16,7 @@
 .action-button:hover{
   background-color: rgb(71, 88, 245);
 }
+
+.space{
+  margin-left:15px ;
+}
