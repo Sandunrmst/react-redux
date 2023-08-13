@@ -1,25 +1,26 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit"
 
-const initialState = {
-    counnt:10,
-    brands:[]
-}
+const initialState =[ {
+    id: 1,
+    price:250000,
+    spec: {
+        cpu:'i3',
+        spec:14,
+        ram:'8GB DDR4',
+        hdd:'1TB'
+    }
+}]
 
 const laptopSlice = createSlice({
-    name:'laptop',
-    initialState,
-    reducers:{
-        addLaptop: (state, action) => ({
-            ...state, //spred for override to count values below -> this step can skip please learn more
-            counnt:state.counnt + action.payload //immer libry can helps you to skip spred operator -> redux-toolkit has that libry
-        }),
-        removeLaptop: (state, action) => ({
-            ...state, //spred for override to count values below -> this step can skip please learn more
-            counnt: state.counnt - action.payload //immer libry can helps you to skip spred operator -> redux-toolkit has that libry
-        })
+    name: 'laptop',
+    initialState: initialState,
+    reducers: {
+        addLaptop: (state, action) => {
+            //now here we used immer library then we no need to use spread opperator for state objects updates
+            state.push(action.payload)
+        }
     }
 })
 
-export const {addLaptop, removeLaptop} = laptopSlice.actions
-
+export const {addLaptop} = laptopSlice.actions
 export default laptopSlice.reducer
