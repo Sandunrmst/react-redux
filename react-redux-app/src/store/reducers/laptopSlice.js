@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
+import store from "../Store"
 
 const initialState =[ {
     id: 1,
@@ -22,5 +23,6 @@ const laptopSlice = createSlice({
     }
 })
 
+export const laptopSliceSelector = (store) => store.laptopSlice
 export const {addLaptop} = laptopSlice.actions
 export default laptopSlice.reducer

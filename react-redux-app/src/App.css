@@ -20,3 +20,14 @@
 .space{
   margin-left:15px ;
 }
+
+.lap{
+  margin-top: 20px;
+}
+
+.add-laptop{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 40%;
+}
